@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor MRI Scan</title>
+    <style>
+        /* Style the form container */
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style form labels */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Style form input fields */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+/* Style radio buttons */
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover effect for submit button */
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Style error messages */
+.error-message {
+    color: red;
+    margin-top: 5px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form action="/predict_checklist" method="post" enctype="multipart/form-data">        
+            <label for="mri">MRI Scan Result:</label>
+            <input type="radio" id="mri_true" name="mri" value="true">
+            <label for="mri_true">True</label>
+            <input type="radio" id="mri_false" name="mri" value="false">
+            <label for="mri_false">False</label><br><br>
+        
+            <label for="expected_tumor">Expected Result:</label>
+            <input type="text" id="expected_tumor" name="expected_tumor"><br><br>
+        
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+        
+            <label for="notes">Notes:</label>
+            <textarea id="notes" name="notes"></textarea><br><br>
+        
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
