@@ -1,0 +1,59 @@
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style form labels */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Style form input fields */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+/* Style radio buttons */
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+    background-color: #af4ca0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover effect for submit button */
+input[type="submit"]:hover {
+    background-color: #a0458b;
+}
+
+/* Style error messages */
+.error-message {
+    color: red;
+    margin-top: 5px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 5%;
+}

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Brain Tumor Detection</title>
@@ -172,27 +172,79 @@
         <input type="submit" value="Show doctor results">
     </form>
 </div>
-<!--
-    <div class="footer">
-        <p>I'm Khalid, I'm a computer Engineer, and work as a junior Data Science and Machine Learning TA/Engineer at AXSOS, and I worked as a Full-stack Developer/TA, in AXSOS AG, I also trained as a front-end React JS developer at EXALT Technologies, and worked in a project in oracle PL/SQL for one year mainly in AI with Database for a web App.</p>
-        <img src="{{ url_for('static', filename='me2A.png') }}" alt="Khalid Khader">
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical AI Systems</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Medical AI Systems</h1>
+    </header>
+
+    <main class="grid-container">
+        <div class="card">
+            <form action="/brain">
+                <input type="submit" value="Check for Brain Tumor">
+            </form>
+            <img src="{{ url_for('static', filename='brain.png') }}" alt="Brain Tumor">
+        </div>
+
+        <div class="card">
+            <form action="/covid">
+                <input type="submit" value="Check for Covid-19">
+            </form>
+            <img src="{{ url_for('static', filename='covid.webp') }}" alt="Covid-19">
+        </div>
+
+        <div class="card">
+            <form action="/Alzeh">
+                <input type="submit" value="Check for Alzheimer's">
+            </form>
+            <img src="{{ url_for('static', filename='Zheimer.avif') }}" alt="Alzheimer's">
+        </div>
+
+    </main>
+    <div class="card">
+        <form action="/display_results">
+            <input type="submit" value="Show Doctor's Results">
+        </form>
+    </div>
+    <div class="card">
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p>I'm Khalid, I'm a computer Engineer, I worked as a junior Data Science and ML TA/Engineer at AXSOS AG, and I worked as a Full-stack Developer/TA, in AXSOS AG, I also trained as a front-end React JS developer at EXALT Technologies, and worked in a project in oracle PL/SQL for one year mainly in AI with Database for a web App. and also Im deliver many sessions with many popular academies in Palestine such as AXSOS Academy, TAP, Knowledge Academy.
+            </p>
+        </div>
+        <div>
+            <h1>Projects</h1>
+            <ul>
+                <li>
+                    <h2>Medical Image Processing Course</h2>
+                    <p>Trained to detect brain tumors with an accuracy of 98%.</p>
+                </li>
+                <li>
+                    <h2>Advanced ML Course</h2>
+                    <p>Trained to detect Covid-19 with an accuracy of 92%.</p>
+                </li>
+                <li>
+                    <h2>Robotics and Machine Vision Course</h2>
+                    <p>Developed a model to classify Alzheimer's with an accuracy of 93%.</p>
+                </li>
+            </ul>
+        </div>
     </div>
 
-     <div>
-        <ul class="project-list">
-            <li class="project-list-item">
-                <span class="project-name">Medical Image Processing Course</span>
-                <p class="project-description">With <b>Dr. Ismaeel Khater</b>, the model was trained to detect the presence of a tumor with an accuracy of 91.6%.</p>
-            </li>
-            <li class="project-list-item">
-                <span class="project-name">Advanced ML Course</span>
-                <p class="project-description">With <b>Dr. Yazan Abu Farha</b>, the model was trained to detect the presence of a tumor with an accuracy of 91.7%.</p>
-            </li>
-            <li class="project-list-item">
-                <span class="project-name">Robotics and Machine vision Course</span>
-                <p class="project-description">With <b>Prof. Ihab Abu Ajamieh</b> the model developed to classify the tumors type to 3 types with accuracy of 94.9%</p>
-            </li>          
-        </ul>
-    </div> -->
+    <footer>
+        <p> This system just for testing its not ready to normal use.</p>
+        <p>For any issues contact Khalid Khader +970568807701 | Khalidalkhader@gmail.com</p>
+        <p>&copy; 2024 Medical AI Systems. All rights reserved.</p>
+    </footer>
 </body>
 </html>

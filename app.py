@@ -85,7 +85,8 @@ def predict_brain_tumor():
         return render_template('result.html', result=predicted_label, confidence_percent=confidence_percent,class1=class1, img = img, checklists=checklists)
         
     except Exception as e:
-        return 'Error uploading file: ' + str(e)
+        return render_template('error.html', message=str(e))
+        # return 'Error uploading file: ' + str(e)
 
 
 @app.route('/predict_checklist', methods=['POST'])
@@ -109,7 +110,8 @@ def display_results():
         # Pass the data to the template for rendering
         return render_template('all_brain_results.html', results=results)
     except Exception as e:
-        return 'Error ' + str(e)    
+        return render_template('error.html', message=str(e))
+        # return 'Error ' + str(e)    
 
 
 @app.route('/predict_covid', methods=['POST'])
@@ -151,7 +153,8 @@ def predict_covid():
         return render_template('result.html', result=predicted_label, confidence_percent=confidence_percent,class1=class1, img = img)
         
     except Exception as e:
-        return 'Error uploading file: ' + str(e)
+        return render_template('error.html', message=str(e))
+        # return 'Error uploading file: ' + str(e)
 
 @app.route('/predict_Alzeh', methods=['POST'])
 def predict_Alzeh():
@@ -188,12 +191,13 @@ def predict_Alzeh():
         return render_template('result.html', result=predicted_label, confidence_percent=confidence_percent,class1=class1, img = img)
         
     except Exception as e:
-        return 'Error uploading file: ' + str(e)
+        # return 'Error uploading file: ' + str(e)
+        return render_template('error.html', message=str(e))
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=5000)
-
+    # app.run(host="0.0.0.0",port=5000)
+    app.run(debug=True,port=4000)
 
 
 
