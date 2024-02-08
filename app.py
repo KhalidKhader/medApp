@@ -52,7 +52,9 @@ checklists = {}
 def predict_brain_tumor():
     file = request.files['image']
     if file.filename == '':
-        return 'No selected file'
+        message = 'No selected file'
+        return render_template('error.html', message=message)
+        
     try:
         # Use the current app's root path to dynamically determine the directory
         file_directory = os.path.join(current_app.root_path, 'uploads')
@@ -86,7 +88,6 @@ def predict_brain_tumor():
         
     except Exception as e:
         return render_template('error.html', message=str(e))
-        # return 'Error uploading file: ' + str(e)
 
 
 @app.route('/predict_checklist', methods=['POST'])
@@ -118,7 +119,8 @@ def display_results():
 def predict_covid():
     file = request.files['image']
     if file.filename == '':
-        return 'No selected file'
+        message = 'No selected file'
+        return render_template('error.html', message=message)
     try:
         # Use the current app's root path to dynamically determine the directory
         file_directory = os.path.join(current_app.root_path, 'uploads')
@@ -154,13 +156,13 @@ def predict_covid():
         
     except Exception as e:
         return render_template('error.html', message=str(e))
-        # return 'Error uploading file: ' + str(e)
 
 @app.route('/predict_Alzeh', methods=['POST'])
 def predict_Alzeh():
     file = request.files['image']
     if file.filename == '':
-        return 'No selected file'
+        message = 'No selected file'
+        return render_template('error.html', message=message)
     try:
         # Use the current app's root path to dynamically determine the directory
         file_directory = os.path.join(current_app.root_path, 'uploads')
