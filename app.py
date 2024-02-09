@@ -65,7 +65,7 @@ def predict_brain_tumor():
         img = image.load_img(file_path, target_size=(224, 224))
         img_array = image.img_to_array(img)
         img_array = np.expand_dims(img_array, axis=0)
-        # img_array /= 255.0  # Normalize the image
+        img_array /= 255.0  # Normalize the image
         # Perform inference
         predictions = model1.predict(img_array)
         predicted_class = np.argmax(predictions[0])    
