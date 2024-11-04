@@ -1,4 +1,4 @@
-form input[type="submit"] {
+/* form input[type="submit"] {
     width: 140px;
     padding: 10px;
     background-color: #af4c9d;
@@ -78,7 +78,7 @@ body {
 }
 
 .footer img {
-    width: 100px; /* Adjust the width as needed */
+    width: 100px; 
     height: auto;
     border-radius: 50%;
 }
@@ -98,18 +98,18 @@ body {
 }
 
 .footer p {
-    width: 60%; /* Adjust the width as needed */
+    width: 60%; 
     text-align: left;
 }
 
 .footer img {
-    width: 350px; /* Adjust the width as needed */
+    width: 350px;
     height: 250px;
     border-radius: 5%;
 }
 
 .img1 {
-    width: 350px; /* Adjust the width as needed */
+    width: 350px; 
     height: 180px;
     border-radius: 5%;
 }
@@ -143,4 +143,118 @@ footer {
     padding: 20px 0;
     margin-top: 20%;
     text-align: center;
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #383838;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem 0;
+    color: #444;
+    font-size: 2rem;
+}
+
+/* Form Container */
+.form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Form Labels */
+label {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    display: block;
+}
+
+label:hover {
+    background-color: #2980b9;
+}
+
+/* Hidden File Input */
+input[type="file"] {
+    display: none;
+}
+
+/* Submit Buttons */
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #691489;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #d35cb9;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+footer a {
+    color: #ff8c00;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .form {
+        padding: 20px;
+    }
+
+    input[type="submit"] {
+        padding: 10px;
+    }
+
+    label {
+        padding: 10px;
+    }
 }
