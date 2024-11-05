@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, current_app, redirect
+from flask import Flask, render_template, request, current_app, redirect, jsonify
 import firebase_admin
 from firebase_admin import credentials, db
 import pytesseract
@@ -7,8 +7,20 @@ import os
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 import numpy as np
+from gradientai import Gradient
+from flask_cors import CORS
+import os
+
+os.environ['GRADIENT_ACCESS_TOKEN'] = "SULXgrNptduvU37FKJK72YFGjlfRjP6S"
+os.environ['GRADIENT_WORKSPACE_ID'] = "afb4054d-10b4-4ae6-a404-3f65361bd408_workspace"
 
 app = Flask(__name__)
+CORS(app)
+
+gradient = Gradient()
+
+# Checklists for different tests
+checklists = {}
 
 # Initialize Firebase app
 cred = credentials.Certificate("./service.json")
@@ -26,6 +38,18 @@ model3 = tf.keras.models.load_model('./zhim.h5')
 def index():
     return render_template('index.html')
 
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.json
+    query = data['query']
+
+    with gradient as g:
+        base_model = g.get_base_model(base_model_slug="nous-hermes2")
+        new_model_adapter = base_model.create_model_adapter(name="test model 3")
+        completion = new_model_adapter.complete(query=query, max_generated_token_count=100).generated_output
+
+    return jsonify({"result": completion})
+
 @app.route('/brain')
 def brain():
     return render_template('brain.html')
@@ -41,12 +65,6 @@ def Alzeh():
 @app.route('/brain_check')
 def brain_check():
     return render_template('checklist_form.html')      
-
-# Checklists for different tests
-checklists = {}
-
-
-
 
 @app.route('/predict_brain_tumor', methods=['POST'])
 def predict_brain_tumor():
@@ -65,7 +83,7 @@ def predict_brain_tumor():
         img = image.load_img(file_path, target_size=(224, 224))
         img_array = image.img_to_array(img)
         img_array = np.expand_dims(img_array, axis=0)
-        # img_array /= 255.0  # Normalize the image
+        img_array /= 255.0  # Normalize the image
         # Perform inference
         predictions = model1.predict(img_array)
         predicted_class = np.argmax(predictions[0])    
@@ -199,8 +217,8 @@ def predict_Alzeh():
 
 if __name__ == '__main__':
     # app.run(host="0.0.0.0",port=5000)
-    # app.run(debug=True,port=4000)
-    app.run()
+    app.run(debug=True,port=4000)
+    # app.run()
 
 
 

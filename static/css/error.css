@@ -1,5 +1,4 @@
-/* Global Styles */
-body {
+/* body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
@@ -8,12 +7,12 @@ body {
 
 h1 {
     text-align: center;
-    color: #d32f2f; /* Red color for error message */
+    color: #d32f2f; 
 }
 
 p {
     text-align: center;
-    color: #d32f2f; /* Red color for error message */
+    color: #d32f2f; 
 }
 form input[type="submit"] {
     width: auto;
@@ -45,4 +44,69 @@ footer {
     padding: 20px 0;
     text-align: center;
     margin-top: 20%;
+} */
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #383838;
+}
+
+h1 {
+    text-align: center;
+    color: #d32f2f; /* Red color for error message */
+    font-size: 2.5rem;
+    margin-top: 50px;
+}
+
+p {
+    text-align: center;
+    color: #fccbc7; /* Red color for error message */
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+/* Form Submit Button Styling */
+form input[type="submit"] {
+    width: auto;
+    padding: 12px 24px;
+    background-color: #691489;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 20px 0;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #fccbc7;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 5%;
+    position: relative;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    form input[type="submit"] {
+        width: 100%;
+        padding: 12px;
+    }
 }

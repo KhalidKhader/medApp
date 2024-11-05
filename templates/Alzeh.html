@@ -1,25 +1,33 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Brain Tumor Detection</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alzheimer Detection</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
 </head>
 <body>
-    <h1>Alzehaimer Detection</h1>
-<div class="form">
-    <form action="/predict_Alzeh" method="POST" enctype="multipart/form-data">
-        <label for="image">Select an image:</label>
-        <input type="file" id="image" name="image">
-        <input type="submit" value="Predict">
-    </form>
-    <form action="/">
-        <input type="submit" value="Back">
-    </form>
-</div>
+
+    <h1>Alzheimer Detection</h1>
+    <div class="form">
+        <form action="/predict_Alzeh" method="POST" enctype="multipart/form-data">
+            <label for="image">Select an image:</label>
+            <input type="file" id="image" name="image">
+            <input type="submit" value="Predict">
+        </form>
+        <form action="/">
+            <input type="submit" value="Back">
+        </form>
+    </div>
+
     <footer>
-        <p> This system just for testing its not ready to normal use.</p>
-        <p>For any issues contact Khalid Khader +970568807701 | Khalidalkhader@gmail.com</p>
+        <p>This system is for testing purposes and is not ready for normal use.</p>
+        <p>For any issues, contact <a href="mailto:Khalidalkhader@gmail.com">Khalid Khader</a> at +970568807701</p>
         <p>&copy; 2024 Medical AI Systems. All rights reserved.</p>
     </footer>
+
 </body>
 </html>

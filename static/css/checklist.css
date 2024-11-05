@@ -32,7 +32,7 @@ input[type="radio"] {
 
 /* Style the submit button */
 input[type="submit"] {
-    background-color: #af4ca0;
+    background-color: #691489;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -42,7 +42,7 @@ input[type="submit"] {
 
 /* Hover effect for submit button */
 input[type="submit"]:hover {
-    background-color: #a0458b;
+    background-color: #691489;
 }
 
 /* Style error messages */
