@@ -209,6 +209,82 @@ def display_results():
     except Exception as e:
         app.logger.error(f"Failed to retrieve results: {e}")
         return render_template('error.html', message="Failed to retrieve results")
+    
+    
+    
+### API"S 
+
+# Brain tumor API
+@app.route('/predict_brain_tumor_api', methods=['POST'])
+def predict_brain_tumor_api():
+    try:
+        file = request.files.get('image')
+        if not file or file.filename == '':
+            return jsonify({"error": "No image file provided"}), 400
+
+        file_path = save_file(file)
+        img_array = preprocess_image(file_path, target_size=(224, 224))
+        class_names = ['Glioma Tumor', 'Meningioma Tumor', 'No Tumor', 'Pituitary Tumor']
+
+        predicted_label, confidence_percent = make_prediction(model1, img_array, class_names)
+
+        return jsonify({
+            "model": "Brain Tumor Classifier",
+            "predicted_label": predicted_label,
+            "confidence_percent": confidence_percent
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+# COVID API
+@app.route('/predict_covid_api', methods=['POST'])
+def predict_covid_api():
+    try:
+        file = request.files.get('image')
+        if not file or file.filename == '':
+            return jsonify({"error": "No image file provided"}), 400
+
+        file_path = save_file(file)
+        img_array = preprocess_image(file_path, target_size=(96, 96), normalize=False)
+        class_names = ['covid', 'normal', 'pneumonia']
+
+        predicted_label, confidence_percent = make_prediction(model2, img_array, class_names)
+
+        return jsonify({
+            "model": "COVID Classifier",
+            "predicted_label": predicted_label,
+            "confidence_percent": confidence_percent
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+# Alzheimer's API
+@app.route('/predict_alzheimers_api', methods=['POST'])
+def predict_alzheimers_api():
+    try:
+        file = request.files.get('image')
+        if not file or file.filename == '':
+            return jsonify({"error": "No image file provided"}), 400
+
+        file_path = save_file(file)
+        img_array = preprocess_image(file_path, target_size=(128, 128), normalize=False)
+        class_names = ['Mild Demented', 'Moderate Demented', 'Non Demented', 'Very Mild Demented']
+
+        predicted_label, confidence_percent = make_prediction(model3, img_array, class_names)
+
+        return jsonify({
+            "model": "Alzheimer's Classifier",
+            "predicted_label": predicted_label,
+            "confidence_percent": confidence_percent
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+# Index route
+@app.route('/api')
+def index_api():
+    return jsonify({"message": "Welcome to the Medical Image Classification API!"})
+
 
 if __name__ == '__main__':
     app.run(debug=True)
