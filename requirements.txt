@@ -1,7 +1,7 @@
-Flask
-firebase-admin
-pytesseract
+Flask==3.0.1
+firebase-admin==6.4.0
+pytesseract==0.3.10
 pillow
-numpy
-keras
-tensorflow
+tensorflow==2.16.1
+numpy==1.26.3
+keras==3.0.0
