@@ -1,7 +1,8 @@
-Flask==3.0.1
+Flask==2.2.3
 firebase-admin==6.4.0
 pytesseract==0.3.10
-pillow
-tensorflow==2.16.1
-numpy==1.26.3
-keras==3.0.0
+pillow==10.0.0
+tensorflow-cpu==2.13.0
+numpy==1.24.3
+keras==2.13.1
+
