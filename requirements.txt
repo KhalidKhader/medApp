@@ -6,5 +6,5 @@ tensorflow-cpu==2.13.0
 numpy==1.24.3
 keras==2.13.1
 werkzeug==2.3.7
-gradientai==1.0.5
+super-gradients==3.7.1
 flask_cors==3.0.10
