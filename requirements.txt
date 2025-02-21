@@ -7,3 +7,4 @@ numpy==1.24.3
 keras==2.13.1
 werkzeug==2.3.7
 gradientai==1.0.5
+flask_cors==3.0.10
